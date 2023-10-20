@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 3
+  selector:             # Add this "selector" field
+    matchLabels:
+      app: my-flask-app
+  template:
+    metadata:
+      labels:
+        app: my-flask-app
+    spec:
+      containers:
+      - name: my-flask-app
+        image: 458283342223.dkr.ecr.us-east-1.amazonaws.com/my_monitoring_app_image:latest
+        imagePullPolicy: Never

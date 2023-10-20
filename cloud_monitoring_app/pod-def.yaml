@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-flask-app
+spec:
+  containers:
+  - name: my-flask-app
+    image: 458283342223.dkr.ecr.us-east-1.amazonaws.com/my_monitoring_app_image:latest
+  imagePullSecrets:
+  - name: ecr-registry-auth
